@@ -1,7 +1,7 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import Login from "./Pages/LoginPages/Login.jsx";
-import NavBar from "./Components/NavBar.jsx";
+import NavBar from "./components/NavBar.jsx";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound.jsx";
 import Home from "./Components/Home/Home.jsx";
 import TailorMasterDashboard from "./Pages/TailorMasterDashboard/TailorMasterDashboard.jsx";
