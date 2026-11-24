@@ -1,0 +1,219 @@
+/* Overlay */
+.assign-tailor-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+/* Modal */
+.assign-tailor-modal {
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 750px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: assign-tailor-fadeIn 0.3s ease-out;
+}
+
+@keyframes assign-tailor-fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.assign-tailor-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.assign-tailor-title {
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.assign-tailor-order-info {
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.assign-tailor-info-row {
+    display: flex;
+    align-items: center;
+}
+
+.assign-tailor-label {
+    font-weight: 550;
+    color: #34495e;
+    margin-right: 5px;
+}
+
+.assign-tailor-value {
+    color: #334155;
+    font-weight: 500;
+}
+
+/* Body */
+.assign-tailor-body {
+    padding: 1.5rem;
+}
+
+.assign-tailor-select-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #334155;
+}
+
+.assign-tailor-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #334155;
+    transition: all 0.2s;
+    background-color: white;
+}
+
+.assign-tailor-select:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.assign-tailor-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+}
+
+.assign-tailor-btn {
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.assign-tailor-cancel-btn {
+    background-color: red;
+    color: #fff;
+}
+
+.assign-tailor-cancel-btn:hover {
+    background-color: rgba(239, 7, 7, 0.58);
+}
+
+.assign-tailor-confirm-btn {
+    background-color: #6E5AF0   ;
+    color: white;
+}
+
+.assign-tailor-confirm-btn:hover:not(:disabled) {
+    background-color: #4b34ef;
+}
+
+.assign-tailor-confirm-btn:disabled {
+    background-color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.assign-tailor-assigned-message {
+    background-color: #fff8e6;
+    border: 1px solid #ffd700;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-in-out;
+    text-align: center;
+}
+
+.assign-tailor-alert-icon {
+    font-size: 20px;
+    color: #ff9800;
+    margin-right: 8px;
+}
+
+.assign-tailor-highlight {
+    color: #d32f2f;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .assign-tailor-modal {
+        margin: 0 1rem;
+    }
+
+    .assign-tailor-footer {
+        flex-direction: column;
+    }
+
+    .assign-tailor-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .assign-tailor-order-info{
+        flex-direction: column;
+    }
+}
+
+
+.assign-tailor-skeleton-loader {
+    position: relative;
+    height: 40px;
+}
+.assign-tailor-skeleton-loader:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /*background-repeat: no-repeat;*/
+    background-image: linear-gradient( 90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100% ),
+    linear-gradient(#aaaaaa 31px, transparent 0),
+    linear-gradient(#ffffff 100%, transparent 0);
+    background-size: 264px 100%, 505px 31px, 100% 100%;
+    background-position: 0 0 , 16px 128px, 0 0;
+    animation: skeleton-animation 2000ms infinite;
+}
+
+@keyframes skeleton-animation {
+    to {
+        background-position: 100% 0, 16px 128px, 0 0;
+    }
+}
+
+

@@ -1,0 +1,484 @@
+/*!* Signup.css *!*/
+
+/*!* Common styles for responsiveness *!*/
+/*.login-container {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    height: 100vh;*/
+/*    background: #F0EDFF;*/
+/*}*/
+
+/*!*!* Left Section *!*!*/
+/*!*.login-container  .signup-left {*!*/
+/*!*    flex: 1;*!*/
+/*!*    background: #D4FEFF;*!*/
+/*!*    display: flex;*!*/
+/*!*    flex-direction: column;*!*/
+/*!*    align-items: center;*!*/
+/*!*    text-align: center;*!*/
+/*!*    overflow: hidden;*!*/
+/*!*    height: 100vh;*!*/
+/*!*}*!*/
+
+/*!*.login-container  .signup-left .header {*!*/
+/*!*    margin-top: 0;*!*/
+/*!*    width: 100%;*!*/
+/*!*    display: flex;*!*/
+/*!*    justify-content: space-between;*!*/
+/*!*}*!*/
+
+/*!*.login-container  .signup-left .logo {*!*/
+/*!*    width: 120px;*!*/
+/*!*}*!*/
+
+/*!*.login-container  .signup-left .tagline {*!*/
+/*!*    font-size: 25px;*!*/
+/*!*    font-weight: bold;*!*/
+/*!*    text-align: left;*!*/
+/*!*    margin: 20px 40px;*!*/
+/*!*}*!*/
+
+/*!*.login-container  .signup-left .student-images img {*!*/
+/*!*    width: 100%;*!*/
+/*!*    height: auto;*!*/
+/*!*}*!*/
+
+/*!*.login-container  .signup-left .student {*!*/
+/*!*    !* Add styles as needed *!*!*/
+/*!*}*!*/
+
+/*!* Right Section *!*/
+/*.login-container  .signup-right {*/
+/*    flex: 1;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    padding: 20px;*/
+/*}*/
+
+/*.login-container  .form-title {*/
+/*    font-size: 2.2rem;*/
+/*    margin-bottom: 25px;*/
+/*    text-align: center;*/
+/*    font-weight: 700;*/
+/*    letter-spacing: -0.5px;*/
+/*}*/
+
+/*.login-container  .signup-form {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 20px;*/
+/*    width: 100%;*/
+/*    max-width: 450px;*/
+/*    margin: 0 auto;*/
+/*}*/
+
+/*.login-container  .input-field {*/
+/*    padding: 14px;*/
+/*    border: 1px solid #e0e0e0;*/
+/*    border-radius: 8px;*/
+/*    font-size: 1rem;*/
+/*    transition: border-color 0.3s ease, box-shadow 0.3s ease;*/
+/*    outline: none;*/
+/*    background-color: #f9f9f9;*/
+/*    caret-color: auto;*/
+/*}*/
+
+/*.login-container  .input-field:focus {*/
+/*    border-color: #7562F1;*/
+/*    box-shadow: 0 0 8px rgba(23, 144, 2, 0.2);*/
+/*}*/
+
+/*.login-container  .name-fields {*/
+/*    display: flex;*/
+/*    gap: 15px;*/
+/*}*/
+
+/*.login-container  .name-fields .input-field {*/
+/*    flex: 1;*/
+/*}*/
+
+/*.login-container  .signup-button {*/
+/*    padding: 14px;*/
+/*    background-color: rgba(110, 90, 240, 0.89);*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 8px;*/
+/*    font-size: 1.1rem;*/
+/*    font-weight: 600;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s ease, transform 0.2s ease;*/
+/*}*/
+
+/*.login-container  .signup-button:hover {*/
+/*    background-color: #6E5AF0;*/
+/*    transform: translateY(-2px);*/
+/*}*/
+
+/*.login-container  .signup-button:disabled {*/
+/*    background-color: #a0a0a0;*/
+/*    cursor: not-allowed;*/
+/*    transform: none;*/
+/*}*/
+
+/*.login-container  .error-message {*/
+/*    color: #ff4d4d;*/
+/*    font-size: 0.9rem;*/
+/*    margin-top: -10px;*/
+/*    margin-bottom: 10px;*/
+/*    font-weight: 500;*/
+/*}*/
+
+/*!*.login-container  .login-link {*!*/
+/*!*    text-align: center;*!*/
+/*!*    margin-top: 20px;*!*/
+/*!*    font-size: 0.95rem;*!*/
+/*!*}*!*/
+
+/*!*.login-container  .login-link a {*!*/
+/*!*    color: #7562F1;*!*/
+/*!*    text-decoration: none;*!*/
+/*!*    transition: color 0.3s ease;*!*/
+/*!*    cursor: pointer;*!*/
+/*!*}*!*/
+
+/*!*.login-container  .login-link a:hover {*!*/
+/*!*    color: #7562F1;*!*/
+/*!*    text-decoration: underline;*!*/
+/*!*}*!*/
+
+/*!*.login-container  .help-center-div {*!*/
+/*!*    position: fixed;*!*/
+/*!*    bottom: 20px;*!*/
+/*!*    right: 20px;*!*/
+/*!*    display: flex;*!*/
+/*!*    align-items: center;*!*/
+/*!*    gap: 8px;*!*/
+/*!*    background-color: rgba(255, 255, 255, 0.9);*!*/
+/*!*    padding: 10px 15px;*!*/
+/*!*    border-radius: 25px;*!*/
+/*!*    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*!*/
+/*!*    transition: background-color 0.3s ease, transform 0.3s ease;*!*/
+/*!*}*!*/
+
+/*!*.login-container  .help-center-div:hover {*!*/
+/*!*    background-color: rgba(23, 144, 2, 0.1);*!*/
+/*!*    transform: translateY(-2px);*!*/
+/*!*}*!*/
+
+/*!*.login-container  .help-center-div svg {*!*/
+/*!*    color: #179002;*!*/
+/*!*    font-size: 1.4rem;*!*/
+/*!*}*!*/
+
+/*!*.login-container  .help-center {*!*/
+/*!*    color: #179002;*!*/
+/*!*    text-decoration: none;*!*/
+/*!*    font-size: 0.95rem;*!*/
+/*!*    font-weight: 500;*!*/
+/*!*    transition: color 0.3s ease;*!*/
+/*!*}*!*/
+
+/*!*.login-container  .help-center:hover {*!*/
+/*!*    color: #147a02;*!*/
+/*!*    text-decoration: underline;*!*/
+/*!*}*!*/
+
+/*.login-container   .login-poster{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    max-width: 787px;*/
+/*    overflow: hidden;*/
+/*    object-fit: cover;*/
+/*}*/
+
+/*.signup-right .error-mes {*/
+/*    color: red;*/
+/*    font-weight: bold;*/
+/*    font-size: 1.1rem;*/
+/*    margin-top: 1rem;*/
+/*}*/
+
+/*@media (max-width: 1250px) {*/
+/*    .login-container   .login-poster{*/
+/*        max-width: 631px;*/
+/*    }*/
+/*}*/
+/*@media screen and (max-width: 1024px) and (min-width: 770px) {*/
+/*    .login-container   .login-poster{*/
+/*        display: none;*/
+/*    }*/
+
+/*    .login-container  .form-title {*/
+/*        font-size: 4.2rem;*/
+/*    }*/
+
+/*    .login-container  .signup-form {*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        gap: 25px;*/
+/*        max-width: 650px;*/
+/*    }*/
+
+/*    .login-container  .input-field {*/
+/*        padding: 24px;*/
+/*        font-size: 1.6rem;*/
+/*    }*/
+
+/*    .login-container  .signup-button {*/
+/*        padding: 14px;*/
+/*        background-color: rgba(110, 90, 240, 0.89);*/
+/*        color: white;*/
+/*        border: none;*/
+/*        border-radius: 8px;*/
+/*        font-size: 1.9rem;*/
+/*    }*/
+/*}*/
+/*!* Media Query for Responsive Design *!*/
+/*@media screen and (max-width: 768px) {*/
+/*    .login-container  {*/
+/*        flex-direction: column;*/
+/*        height: 100vh;*/
+/*    }*/
+
+/*    .signup-left {*/
+/*        height: auto;*/
+/*    }*/
+
+/*    .signup-left .student-images img {*/
+/*        display: none;*/
+/*    }*/
+
+/*    .login-container  .signup-right {*/
+/*        order: -1;*/
+/*    }*/
+
+/*    .login-container  .signup-button {*/
+/*        width: 100%;*/
+/*    }*/
+
+/*    .login-container  .login-poster {*/
+/*        display: none;*/
+/*    }*/
+/*}*/
+
+
+/* Base styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    padding: 20px;
+}
+
+.login-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* Form section */
+.signup-right {
+    flex: 1;
+    padding: 80px 50px;
+    max-width: 500px;
+}
+
+.form-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-header img{
+    width: 200px;
+}
+
+.form-header h2{
+    margin-top: 20px;
+}
+
+.form-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.form-subtitle {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.input-group {
+    margin-bottom: 24px;
+}
+
+.input-label {
+    display: block;
+    font-size: 15px;
+    color: #475569;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input-field {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: .9rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    background-color: #f9f9f9;
+    caret-color: auto;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    color: #6366f1;
+    margin-top: 8px;
+    text-decoration: none;
+}
+
+.signup-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.signup-button:hover:not(:disabled) {
+    background-color: #4f46e5;
+}
+
+.signup-button.disabled {
+    background-color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.login-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.signup-link a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.error-mes {
+    color: #ef4444;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 12px;
+    background-color: #fee2e2;
+    border-radius: 8px;
+}
+
+/* Poster section */
+.login-poster {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+.login-poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.poster-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .login-content {
+        flex-direction: column;
+    }
+
+    .signup-right {
+        max-width: 100%;
+        padding: 40px 30px;
+    }
+
+    .login-poster {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-header img{
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 16px;
+    }
+
+    .signup-right {
+        padding: 30px 20px;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+}

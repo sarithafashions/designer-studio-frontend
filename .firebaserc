@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "sarithadesignerstudio-b81a8"
+  },
+  "targets": {
+    "sarithadesignerstudio-b81a8": {
+      "hosting": {
+        "production": [
+          "sarithadesignerstudio-b81a8"
+        ],
+        "testing": [
+          "testing-sarithasdesignerstudio"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

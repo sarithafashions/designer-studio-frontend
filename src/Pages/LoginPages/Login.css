@@ -1,0 +1,266 @@
+/*
+ * Sign-in page: light grey page with two panels — a white sign-in card (left) and a deep-green showcase panel
+ * (right) with the studio illustration and a (rotating) headline. Shared by login, forgot and reset password.
+ * Colours / type from design.md (deep enterprise green, near-black ink, hairline borders, Space Grotesk + Inter).
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+.lg {
+  --lg-primary: #17171c;
+  --lg-ink: #212121;
+  --lg-slate: #75758a;
+  --lg-muted: #93939f;
+  --lg-hairline: #d9d9dd;
+  --lg-border: #e5e7eb;
+  --lg-page: #f4f4f6;
+  --lg-canvas: #ffffff;
+  --lg-green: #003c33;
+  --lg-green-2: #0b5a4d;
+  --lg-green-btn: #0d4f45;
+  --lg-coral: #ff7759;
+  --lg-focus: #4c6ee6;
+  --lg-form-focus: #9b60aa;
+  --lg-error: #b30000;
+  --lg-error-bg: #fdeeee;
+
+  /* exactly the window: the page never scrolls; only the card scrolls on very short windows */
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(380px, 1fr) minmax(0, 1.05fr);
+  gap: 16px;
+  padding: 16px;
+  background: var(--lg-page);
+  color: var(--lg-ink);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+.lg *, .lg *::before, .lg *::after { box-sizing: border-box; }
+
+/* ---------------------------------------------------------------- left: sign-in card */
+.lg-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--lg-canvas);
+  border: 1px solid var(--lg-border);
+  border-radius: 22px;
+  padding: 28px clamp(24px, 4vw, 56px);
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+}
+.lg-brand { display: flex; align-items: center; gap: 10px; }
+.lg-brand img { height: 36px; width: auto; display: block; }
+
+.lg-body {
+  flex: 1;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(16px, 4vh, 40px) 0;
+}
+.lg-head { text-align: center; margin-bottom: 32px; }
+.lg-title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  color: var(--lg-primary);
+  margin: 0 0 8px;
+}
+.lg-sub { margin: 0 auto; max-width: 320px; font-size: 14px; line-height: 1.5; color: var(--lg-slate); }
+
+.lg-form { display: flex; flex-direction: column; gap: 16px; }
+.lg-field { display: flex; flex-direction: column; gap: 6px; }
+.lg-label { font-size: 13px; font-weight: 500; color: var(--lg-primary); }
+.lg-label em { font-style: normal; color: var(--lg-error); margin-left: 2px; }
+.lg-input-wrap { position: relative; }
+.lg-input-icon {
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  color: var(--lg-muted); font-size: 16px; pointer-events: none; display: grid;
+}
+.lg-input {
+  width: 100%;
+  height: 46px;
+  padding: 0 44px 0 42px;
+  border: 1px solid var(--lg-hairline);
+  border-radius: 10px;
+  background: var(--lg-canvas);
+  font: inherit;
+  font-size: 14px;
+  color: var(--lg-ink);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.lg-input::placeholder { color: var(--lg-muted); }
+.lg-input:hover { border-color: var(--lg-slate); }
+.lg-input:focus { outline: none; border-color: var(--lg-form-focus); box-shadow: 0 0 0 3px rgba(155, 96, 170, 0.15); }
+.lg-input:focus + .lg-input-icon, .lg-input-wrap:focus-within .lg-input-icon { color: var(--lg-primary); }
+.lg-input[aria-invalid="true"] { border-color: var(--lg-error); }
+.lg-eye {
+  position: absolute; top: 50%; right: 5px; transform: translateY(-50%);
+  width: 36px; height: 36px; display: grid; place-items: center;
+  border: 0; border-radius: 8px; background: none; color: var(--lg-slate); cursor: pointer; font-size: 16px;
+}
+.lg-eye:hover { color: var(--lg-primary); background: var(--lg-page); }
+.lg-eye:focus-visible { outline: 2px solid var(--lg-focus); outline-offset: 1px; }
+.lg-field-error { font-size: 12px; color: var(--lg-error); }
+
+.lg-row { display: flex; justify-content: flex-end; margin-top: -4px; }
+.lg-link {
+  font-size: 13px;
+  color: var(--lg-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--lg-hairline);
+}
+.lg-link:hover { text-decoration-color: var(--lg-primary); color: var(--lg-primary); }
+.lg-link:focus-visible { outline: 2px solid var(--lg-focus); outline-offset: 2px; border-radius: 4px; }
+
+.lg-error {
+  display: flex; gap: 8px; align-items: flex-start;
+  padding: 10px 12px; border-radius: 10px;
+  background: var(--lg-error-bg); color: var(--lg-error); font-size: 13px; line-height: 1.4;
+}
+.lg-error svg { flex: none; margin-top: 2px; }
+
+.lg-submit {
+  margin-top: 4px;
+  height: 48px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--lg-green-btn);
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  transition: background-color 0.15s, opacity 0.15s;
+}
+.lg-submit:hover:not(:disabled) { background: var(--lg-green); }
+.lg-submit:focus-visible { outline: 2px solid var(--lg-focus); outline-offset: 3px; }
+.lg-submit:disabled { opacity: 0.45; cursor: not-allowed; }
+.lg-spinner {
+  width: 16px; height: 16px; border: 2px solid rgba(255, 255, 255, 0.35); border-top-color: #fff;
+  border-radius: 50%; animation: lg-spin 0.8s linear infinite;
+}
+@keyframes lg-spin { to { transform: rotate(360deg); } }
+
+.lg-note {
+  margin-top: 24px; display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--lg-slate); text-align: center; justify-content: center;
+}
+.lg-note::before, .lg-note::after { content: ""; flex: 1; height: 1px; background: var(--lg-border); }
+.lg-note span { flex: none; white-space: nowrap; }
+
+.lg-foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--lg-muted); }
+
+/* ---------------------------------------------------------------- forgot / reset extras */
+.lg-back, .lg-textbtn {
+  align-self: center; margin-top: 18px; display: inline-flex; align-items: center; gap: 6px;
+  background: none; border: 0; padding: 6px 8px; border-radius: 8px; font: inherit; font-size: 14px;
+  color: var(--lg-ink); cursor: pointer;
+}
+.lg-back:hover, .lg-textbtn:hover { color: var(--lg-primary); background: var(--lg-page); }
+.lg-back:focus-visible, .lg-textbtn:focus-visible { outline: 2px solid var(--lg-focus); outline-offset: 2px; }
+.lg-textbtn { margin-top: 8px; color: var(--lg-slate); text-decoration: underline; text-underline-offset: 3px; }
+.lg-inline-link { background: none; border: 0; padding: 0; font: inherit; color: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; }
+
+.lg-done { display: flex; flex-direction: column; align-items: stretch; text-align: center; }
+.lg-done .lg-title { margin-top: 4px; }
+.lg-done .lg-sub { margin-bottom: 24px; }
+.lg-done .lg-sub b { color: var(--lg-primary); font-weight: 600; word-break: break-all; }
+.lg-done-icon {
+  align-self: center; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+  background: #e8f3ef; color: var(--lg-green-btn); font-size: 28px; margin-bottom: 18px;
+  box-shadow: 0 0 0 8px #f3f9f6;
+}
+.lg-done-icon.ok { background: #edfce9; color: #1a7f4b; box-shadow: 0 0 0 8px #f5fdf3; }
+.lg-tips { text-align: left; border: 1px solid var(--lg-border); border-radius: 12px; padding: 14px 16px; margin-bottom: 20px; }
+.lg-tips-title { font-size: 13px; font-weight: 600; color: var(--lg-primary); margin-bottom: 8px; }
+.lg-tips ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--lg-slate); }
+.lg-tips li { display: flex; gap: 8px; align-items: flex-start; }
+.lg-tips svg { flex: none; margin-top: 3px; color: var(--lg-green-btn); }
+
+.lg-rules { margin: -4px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 12px; font-size: 12px; color: var(--lg-muted); }
+.lg-rules li { display: flex; align-items: center; gap: 6px; }
+.lg-rules li.ok { color: #1a7f4b; }
+.lg-rules svg { flex: none; }
+
+/* ---------------------------------------------------------------- right: showcase panel */
+.lg-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background:
+    radial-gradient(120% 80% at 80% 0%, rgba(31, 157, 107, 0.35) 0%, rgba(0, 60, 51, 0) 60%),
+    linear-gradient(160deg, var(--lg-green-2) 0%, var(--lg-green) 55%, #00251f 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, 4vh, 40px) clamp(28px, 4vw, 56px) clamp(20px, 3.6vh, 36px);
+  min-height: 0;
+}
+/* faint grid lines */
+.lg-panel::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, #000 0%, transparent 70%);
+}
+
+/* studio illustration */
+/* the drawing takes whatever height is left and scales down to fit (viewBox keeps its proportions) */
+.lg-art { position: relative; z-index: 1; flex: 1 1 0; min-height: 0; display: grid; }
+.lg-art > * { grid-area: 1 / 1; }
+.lg-art-svg { width: 100%; height: 100%; max-width: 560px; max-height: 470px; margin: auto; display: block; filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.18)); }
+.lg-art-fade { animation: lg-art-fade 0.6s ease-out; }
+@keyframes lg-art-fade { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: none; } }
+
+/* bottom copy */
+.lg-copy { position: relative; z-index: 1; flex: none; text-align: center; max-width: 480px; margin: clamp(12px, 2.6vh, 24px) auto 0; }
+.lg-copy-icon {
+  width: 44px; height: 44px; margin: 0 auto clamp(10px, 1.8vh, 16px); border-radius: 12px;
+  display: grid; place-items: center; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.18); font-size: 20px;
+}
+.lg-copy h2 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif; font-weight: 500;
+  font-size: clamp(22px, 2.2vw, 30px); line-height: 1.2; letter-spacing: -0.3px; margin: 0 0 10px;
+  color: #fff; /* beat the global h2 colour from index.css */
+}
+.lg-copy h2 strong { font-weight: 600; color: #ffd7cc; }
+.lg-copy p { margin: 0; font-size: 14px; line-height: 1.55; color: rgba(255, 255, 255, 0.72); min-height: 44px; }
+.lg-dots { display: flex; justify-content: center; gap: 6px; margin-top: clamp(12px, 2.2vh, 20px); }
+.lg-dots button {
+  width: 8px; height: 8px; border-radius: 4px; border: 0; padding: 0; cursor: pointer;
+  background: rgba(255, 255, 255, 0.35); transition: width 0.2s, background-color 0.2s;
+}
+.lg-dots button[aria-current="true"] { width: 22px; background: #fff; }
+.lg-dots button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.lg-fade { animation: lg-fade 0.4s ease-out; }
+@keyframes lg-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* ---------------------------------------------------------------- responsive */
+@media (max-width: 1023px) {
+  .lg { grid-template-columns: minmax(0, 1fr); padding: 12px; }
+  .lg-panel { display: none; }
+}
+@media (max-width: 424px) {
+  .lg { padding: 0; }
+  .lg-card { border-radius: 0; border: 0; padding: 20px 16px; }
+}
+@media (max-height: 640px) {
+  .lg-copy-icon { display: none; }
+  .lg-brand img { height: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lg-fade, .lg-art-fade { animation: none; }
+  .lg-spinner { animation-duration: 2s; }
+}

@@ -1,0 +1,32 @@
+.tailor-master-dashboard-view-btn {
+    background-color: rgba(169, 169, 169, 0.35);
+    color: black;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tailor-master-dashboard-view-btn:hover {
+    background-color: rgba(169, 169, 169, 0.5);
+    text-decoration: underline;
+}
+
+.tailor-master-dashboard-view-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tailor-master-dashboard-view-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.3); /* Blue glow */
+}
+
+.myordersTM {
+    margin-top: 1rem;
+}
+
+

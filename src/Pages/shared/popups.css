@@ -1,0 +1,261 @@
+/*
+ * Toasts and confirmation popups (SweetAlert2), themed to design.md for the whole app.
+ * Loaded once in main.jsx, so every Swal.fire / toast.* looks the same on every screen (old ones too).
+ * Flat white surfaces, 1px hairline borders, 8px / 16px radius, near-black pill for the main action,
+ * outline pill for the second one, small tinted status icons, Space Grotesk titles, Inter text.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
+.swal2-container {
+  --sf-primary: #17171c;
+  --sf-ink: #212121;
+  --sf-body: #616161;
+  --sf-slate: #75758a;
+  --sf-muted: #93939f;
+  --sf-hairline: #d9d9dd;
+  --sf-border: #e5e7eb;
+  --sf-canvas: #ffffff;
+  --sf-neutral: #f4f4f6;
+  --sf-focus: #4c6ee6;
+  --sf-form-focus: #9b60aa;
+  --sf-success: #1a7f4b;
+  --sf-success-bg: #edfce9;
+  --sf-warning: #9a5b00;
+  --sf-warning-bg: #fff6e5;
+  --sf-info: #1863dc;
+  --sf-info-bg: #f1f5ff;
+  --sf-danger: #b30000;
+  --sf-danger-bg: #fdeeee;
+  --sf-font-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --sf-font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+}
+
+/* ================================================================ confirmation / message dialogs */
+
+/* dim the page only behind centred dialogs — never behind toasts (their container is a strip on the right) */
+.swal2-container.swal2-center.swal2-backdrop-show { background: rgba(23, 23, 28, 0.45) !important; }
+body.swal2-toast-shown .swal2-container,
+.swal2-container.swal2-top-end,
+.swal2-container.swal2-top-right { background: transparent !important; }
+
+.swal2-popup:not(.swal2-toast) {
+  width: min(440px, calc(100vw - 32px)) !important;
+  padding: 28px 28px 22px !important;
+  border: 1px solid var(--sf-border) !important;
+  border-radius: 16px !important;
+  background: var(--sf-canvas) !important;
+  box-shadow: 0 16px 40px rgba(23, 23, 28, 0.12) !important;
+  font-family: var(--sf-font-ui) !important;
+  color: var(--sf-ink) !important;
+  text-align: left !important;
+}
+
+/* status icon: small, left-aligned, above the title */
+.swal2-popup:not(.swal2-toast) .swal2-icon {
+  font-size: 8px !important;
+  margin: 0 0 16px !important;
+  justify-self: start !important;
+}
+
+.swal2-popup:not(.swal2-toast) .swal2-title {
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+  text-align: left !important;
+  font-family: var(--sf-font-display) !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.2px;
+  color: var(--sf-primary) !important;
+}
+
+.swal2-popup:not(.swal2-toast) .swal2-html-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  color: var(--sf-body) !important;
+  white-space: pre-line;
+}
+.swal2-popup:not(.swal2-toast) .swal2-html-container b { color: var(--sf-ink); font-weight: 600; }
+.swal2-popup:not(.swal2-toast) .swal2-html-container ul { margin: 8px 0 !important; padding-left: 18px !important; }
+
+/* buttons: main action = near-black pill on the right, second = outline pill */
+.swal2-popup .swal2-actions {
+  width: 100% !important;
+  justify-content: flex-end !important;
+  gap: 8px;
+  margin: 24px 0 0 !important;
+  padding: 0 !important;
+  flex-wrap: wrap;
+}
+.swal2-popup .swal2-styled {
+  margin: 0 !important;
+  padding: 10px 20px !important;
+  border-radius: 32px !important;
+  font-family: var(--sf-font-ui) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  box-shadow: none !important;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+.swal2-popup .swal2-styled:focus-visible { outline: 2px solid var(--sf-focus) !important; outline-offset: 2px; }
+.swal2-popup .swal2-styled.swal2-confirm {
+  background: var(--sf-primary) !important;
+  border: 1px solid var(--sf-primary) !important;
+  color: #fff !important;
+}
+.swal2-popup .swal2-styled.swal2-confirm:hover { background: #000 !important; }
+/* a red main action stays red (confirmButtonColor "#b30000" or toast.confirm({danger: true})) */
+.swal2-popup .swal2-styled.swal2-confirm[style*="179, 0, 0"],
+.swal2-popup .swal2-styled.swal2-confirm.sf-danger {
+  background: var(--sf-danger) !important;
+  border-color: var(--sf-danger) !important;
+}
+.swal2-popup .swal2-styled.swal2-cancel,
+.swal2-popup .swal2-styled.swal2-deny {
+  background: transparent !important;
+  border: 1px solid var(--sf-hairline) !important;
+  color: var(--sf-ink) !important;
+}
+.swal2-popup .swal2-styled.swal2-cancel:hover,
+.swal2-popup .swal2-styled.swal2-deny:hover { border-color: var(--sf-primary) !important; background: var(--sf-neutral) !important; }
+
+/* inputs inside a dialog (e.g. "Note (optional)") */
+.swal2-popup .swal2-input,
+.swal2-popup .swal2-textarea,
+.swal2-popup .swal2-select {
+  width: 100% !important;
+  margin: 16px 0 0 !important;
+  height: 40px;
+  padding: 0 12px !important;
+  border: 1px solid var(--sf-hairline) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  font-family: var(--sf-font-ui) !important;
+  font-size: 14px !important;
+  color: var(--sf-ink) !important;
+  background: var(--sf-canvas) !important;
+}
+.swal2-popup .swal2-textarea { height: auto; min-height: 88px; padding: 10px 12px !important; }
+.swal2-popup .swal2-input:focus,
+.swal2-popup .swal2-textarea:focus,
+.swal2-popup .swal2-select:focus {
+  outline: none !important;
+  border-color: var(--sf-form-focus) !important;
+  box-shadow: 0 0 0 3px rgba(155, 96, 170, 0.15) !important;
+}
+.swal2-popup .swal2-validation-message {
+  margin: 10px 0 0 !important;
+  padding: 8px 12px !important;
+  border-radius: 8px;
+  background: var(--sf-danger-bg) !important;
+  color: var(--sf-danger) !important;
+  font-size: 13px !important;
+  justify-content: flex-start !important;
+}
+.swal2-popup .swal2-validation-message::before { display: none !important; }
+
+.swal2-popup .swal2-close {
+  color: var(--sf-muted) !important;
+  font-size: 22px !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+}
+.swal2-popup .swal2-close:hover { color: var(--sf-primary) !important; background: var(--sf-neutral) !important; }
+
+/* ================================================================ toasts (top right) */
+
+/* The toast holder hides overflow: make it fit the toast + its 16px padding so nothing is cut off,
+   and keep toasts above every in-page popup (Modal 1000, date picker 1100). */
+body.swal2-toast-shown .swal2-container {
+  width: 392px !important;
+  max-width: 100vw !important;
+  padding: 16px !important;
+  z-index: 2000 !important;
+}
+
+.swal2-popup.swal2-toast {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 12px 12px 12px 14px !important;
+  border: 1px solid var(--sf-hairline) !important;
+  border-radius: 12px !important;
+  background: var(--sf-canvas) !important;
+  box-shadow: 0 8px 24px rgba(23, 23, 28, 0.10) !important;
+  font-family: var(--sf-font-ui) !important;
+  column-gap: 12px !important;
+  align-items: start !important;
+  overflow: hidden;
+}
+.swal2-popup.swal2-toast .swal2-title {
+  margin: 4px 0 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  font-family: var(--sf-font-ui) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  color: var(--sf-primary) !important;
+}
+.swal2-popup.swal2-toast .swal2-html-container {
+  margin: 2px 0 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  color: var(--sf-slate) !important;
+  white-space: pre-line;
+}
+.swal2-popup.swal2-toast .swal2-html-container:empty { display: none !important; }
+
+/* status icon: tinted circle with a line icon (toast.js passes iconHtml + the sf-icon classes) */
+.swal2-popup .swal2-icon.sf-icon {
+  width: 28px !important;
+  min-width: 28px !important;
+  height: 28px !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  font-size: 15px !important;
+  animation: none !important;
+  display: grid !important;
+  place-items: center;
+}
+.swal2-popup .swal2-icon.sf-icon .swal2-icon-content { font-size: 15px !important; display: grid; place-items: center; }
+.swal2-popup .swal2-icon.sf-icon svg { width: 15px; height: 15px; }
+.swal2-popup .swal2-icon.sf-icon-success { background: var(--sf-success-bg) !important; color: var(--sf-success) !important; }
+.swal2-popup .swal2-icon.sf-icon-error { background: var(--sf-danger-bg) !important; color: var(--sf-danger) !important; }
+.swal2-popup .swal2-icon.sf-icon-warning { background: var(--sf-warning-bg) !important; color: var(--sf-warning) !important; }
+.swal2-popup .swal2-icon.sf-icon-info,
+.swal2-popup .swal2-icon.sf-icon-question { background: var(--sf-info-bg) !important; color: var(--sf-info) !important; }
+/* the same icon a little larger in a dialog */
+.swal2-popup:not(.swal2-toast) .swal2-icon.sf-icon { width: 40px !important; height: 40px !important; min-width: 40px !important; margin: 0 0 16px !important; }
+.swal2-popup:not(.swal2-toast) .swal2-icon.sf-icon svg { width: 20px; height: 20px; }
+
+.swal2-popup.swal2-toast .swal2-close {
+  width: 24px !important;
+  height: 24px !important;
+  font-size: 18px !important;
+  margin: 2px 0 0 !important;
+  align-self: start !important;
+}
+
+/* thin progress line in the toast's status colour */
+.swal2-popup.swal2-toast .swal2-timer-progress-bar-container { height: 2px; }
+.swal2-popup.swal2-toast .swal2-timer-progress-bar { height: 2px !important; background: var(--sf-slate) !important; opacity: 0.6; }
+.swal2-popup.sf-toast-success .swal2-timer-progress-bar { background: var(--sf-success) !important; }
+.swal2-popup.sf-toast-error .swal2-timer-progress-bar { background: var(--sf-danger) !important; }
+.swal2-popup.sf-toast-warning .swal2-timer-progress-bar { background: var(--sf-warning) !important; }
+.swal2-popup.sf-toast-info .swal2-timer-progress-bar { background: var(--sf-info) !important; }
+
+@media (max-width: 480px) {
+  .swal2-popup:not(.swal2-toast) { padding: 22px 20px 18px !important; }
+  .swal2-popup .swal2-actions { justify-content: stretch !important; }
+  .swal2-popup .swal2-actions .swal2-styled { flex: 1 1 auto; }
+}

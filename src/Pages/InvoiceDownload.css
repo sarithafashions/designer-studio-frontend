@@ -1,0 +1,146 @@
+/* InvoiceDownload.css */
+.invoice-download-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.download-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.animation-container {
+    margin: 0 auto 30px;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.download-button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.download-button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.button-icon {
+    font-size: 20px;
+}
+
+.small-text {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #ecf0f1;
+    border-radius: 3px;
+    margin: 20px auto;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    animation: progressAnimation 2s ease-in-out infinite;
+}
+
+@keyframes progressAnimation {
+    0% { width: 0; }
+    50% { width: 100%; }
+    100% { width: 0; margin-left: 100%; }
+}
+
+.success-container {
+    animation: fadeIn 0.5s ease;
+}
+
+.success-checkmark {
+    font-size: 60px;
+    color: #2ecc71;
+    margin: 20px 0;
+    animation: bounce 0.5s ease;
+}
+
+.error-container {
+    animation: shake 0.5s ease;
+}
+
+.error-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.retry-button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+    background: #c0392b;
+}
+
+.support-text {
+    margin-top: 20px;
+}
+
+.support-text a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}

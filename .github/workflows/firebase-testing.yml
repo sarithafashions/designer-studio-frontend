@@ -1,0 +1,48 @@
+name: Deploy to Firebase Hosting - Testing on PR
+
+on:
+  pull_request:
+    branches:
+      - testing
+
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  build_and_preview:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout code
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build with Testing Environment Variables
+        run: npx cross-env VITE_API_BASE_URL=https://testing-saritha-fashion-156538435086.asia-south2.run.app npm run build
+
+      - name: Confirm Vite Output (debugging)
+        run: |
+          echo "Dist folder contents:"
+          ls -al dist
+          echo "Previewing index.html:"
+          head -n 20 dist/index.html
+
+      - name: Deploy to Firebase Hosting (Testing)
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SARITHADESIGNERSTUDIO_B81A8 }}
+          projectId: sarithadesignerstudio-b81a8
+          target: testing
+          entryPoint: ./
+

@@ -1,0 +1,296 @@
+/* Main Container */
+.maint-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    padding: 2rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Content Box */
+.maint-content {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    padding: 3rem 4rem;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animation Section */
+.maint-animation {
+    position: relative;
+    height: 150px;
+    margin-bottom: 2rem;
+}
+
+.maint-gear {
+    position: absolute;
+    z-index: 1;
+}
+
+.maint-gear-large {
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    animation: spin-clockwise 8s linear infinite;
+}
+
+.maint-gear-small {
+    width: 80px;
+    height: 80px;
+    left: 60%;
+    top: 60px;
+    animation: spin-counter-clockwise 6s linear infinite;
+}
+
+.maint-svg {
+    width: 100%;
+    height: 100%;
+    fill: #4a6cf7;
+    opacity: 0.9;
+}
+
+.maint-tools {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.maint-wrench {
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    background: #4a6cf7;
+    border-radius: 5px;
+    top: 30%;
+    left: 30%;
+    transform: rotate(30deg);
+    animation: tool-float 4s ease-in-out infinite;
+}
+
+.maint-wrench::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #4a6cf7;
+    top: -5px;
+    left: -15px;
+}
+
+.maint-screwdriver {
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #4a6cf7;
+    border-radius: 3px;
+    top: 60%;
+    left: 60%;
+    transform: rotate(-15deg);
+    animation: tool-float 5s ease-in-out infinite 1s;
+}
+
+.maint-screwdriver::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #4a6cf7;
+    border-radius: 2px;
+    top: -3px;
+    right: -6px;
+    transform: rotate(45deg);
+}
+
+/* Typography */
+.maint-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.maint-message {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Countdown Timer */
+.maint-countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.maint-countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0.5rem;
+}
+
+.maint-countdown-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    background: #f8f9ff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    min-width: 80px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(74, 108, 247, 0.1);
+}
+
+.maint-countdown-label {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.maint-countdown-separator {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ccc;
+    margin: 0 0.5rem;
+    position: relative;
+    top: -10px;
+}
+
+/* Contact Section */
+.maint-contact {
+    margin-bottom: 2rem;
+}
+
+.maint-contact p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.maint-contact-link {
+    display: inline-block;
+    color: #4a6cf7;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+.maint-contact-link:hover {
+    color: #3a5bd9;
+    background: rgba(74, 108, 247, 0.1);
+}
+
+/* Progress Bar */
+.maint-progress {
+    width: 100%;
+    height: 6px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.maint-progress-bar {
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(90deg, #4a6cf7 0%, #6a8af8 100%);
+    border-radius: 3px;
+    animation: progress-animation 2s ease-in-out infinite alternate;
+}
+
+/* Animations */
+@keyframes spin-clockwise {
+    from { transform: translateX(-50%) rotate(0deg); }
+    to { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes spin-counter-clockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+@keyframes tool-float {
+    0%, 100% { transform: translateY(0) rotate(30deg); }
+    50% { transform: translateY(-15px) rotate(35deg); }
+}
+
+@keyframes progress-animation {
+    from { width: 60%; }
+    to { width: 70%; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .maint-content {
+        padding: 2rem;
+    }
+
+    .maint-title {
+        font-size: 2rem;
+    }
+
+    .maint-countdown-number {
+        font-size: 2rem;
+        min-width: 60px;
+        padding: 0.5rem 1rem;
+    }
+
+    .maint-countdown-separator {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .maint-container {
+        padding: 1rem;
+    }
+
+    .maint-content {
+        padding: 1.5rem;
+    }
+
+    .maint-title {
+        font-size: 1.8rem;
+    }
+
+    .maint-message {
+        font-size: 1rem;
+    }
+
+    .maint-countdown-number {
+        font-size: 1.5rem;
+        min-width: 50px;
+        padding: 0.5rem;
+    }
+
+    .maint-countdown-label {
+        font-size: 0.8rem;
+    }
+
+    .maint-countdown-separator {
+        font-size: 1.2rem;
+        top: -5px;
+    }
+}

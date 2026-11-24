@@ -1,0 +1,126 @@
+/* ==========================================================================
+   SARITHAS DESIGNER STUDIO - GLOBAL DESIGN TOKENS
+   ========================================================================== */
+
+/* 1. Import Web Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#root {
+     max-width: unset !important;
+     margin: 0 !important;
+     padding: 0 !important;
+     text-align: unset !important;
+}
+
+/* 2. Declare Variables */
+:root {
+  /* Brand Accents */
+  --brand-maroon: #7B1123;
+  --brand-maroon-hover: #5F0C1A;
+  --brand-rose-gold: #D48B8B;
+  --brand-gold: #D4AF37;
+  --brand-champagne: #F8F3ED;
+
+  /* Surfaces & Canvas */
+  --bg-app: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  --bg-muted: #F9F9F9;
+  --bg-header: #FFBFF9;
+  --border-subtle: #EBEBEB;
+  --border-focus: #7B1123;
+
+  /* Text & Ink */
+  --text-primary: #1A1A1A;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --text-discount: #C0292B;
+
+  /* Functional Status */
+  --status-success: #287D4A;
+  --status-alert: #D97706;
+  --status-danger: #B91C1C;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Jost', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* 3. Base Resets */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .brand-heading {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* 4. Common Reusable Component Classes */
+.btn-primary {
+  background-color: var(--brand-maroon);
+  color: #FFFFFF;
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-maroon-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--brand-maroon);
+  border: 1px solid var(--brand-maroon);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: var(--brand-champagne);
+}
+
+.table-erp {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-erp th {
+  background-color: var(--bg-muted);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: left;
+}
+
+.table-erp td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 12px;
+}
+
+.sku-code {
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}

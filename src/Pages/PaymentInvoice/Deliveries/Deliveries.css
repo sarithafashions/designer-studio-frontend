@@ -1,0 +1,273 @@
+.deliveries-page {
+    padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #2c3e50;
+}
+
+.deliveries-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.deliveries-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.deliveries-date {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.deliveries-date input {
+    padding: 6px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+}
+
+.deliveries-btn {
+    background: #6E5AF0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 14px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.deliveries-btn.secondary {
+    background: #fff;
+    color: #6E5AF0;
+    border: 1px solid #6E5AF0;
+}
+
+.deliveries-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.deliveries-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.deliveries-stat {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #6E5AF0;
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.deliveries-stat.overdue {
+    border-left-color: #d33;
+}
+
+.deliveries-stat.done {
+    border-left-color: #2e9e4f;
+}
+
+.deliveries-stat span {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.deliveries-stat strong {
+    font-size: 1.6rem;
+}
+
+.deliveries-stat small {
+    color: #888;
+}
+
+.deliveries-section {
+    margin-top: 20px;
+}
+
+.deliveries-section h3 {
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.deliveries-count {
+    background: #f0f0f0;
+    border-radius: 999px;
+    padding: 1px 10px;
+    font-size: 0.85rem;
+}
+
+.deliveries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+}
+
+.deliveries-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.deliveries-card.is-overdue {
+    border-color: #f1b5b5;
+}
+
+.deliveries-card.is-ready {
+    border-color: #A8DCAB;
+}
+
+.deliveries-card-head,
+.deliveries-card-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.deliveries-card-foot {
+    align-items: center;
+}
+
+.deliveries-customer {
+    font-weight: 600;
+}
+
+.deliveries-muted {
+    color: #777;
+    font-size: 0.85rem;
+}
+
+.deliveries-muted a {
+    color: inherit;
+}
+
+.deliveries-badges {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.deliveries-badge {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.deliveries-badge.ready {
+    background: #e3f5e5;
+    color: #2e7d32;
+}
+
+.deliveries-badge.progress {
+    background: #fff4e0;
+    color: #a86400;
+}
+
+.deliveries-badge.overdue {
+    background: #fde7e7;
+    color: #b42318;
+}
+
+.deliveries-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.deliveries-items li {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 3px 0;
+    border-bottom: 1px dashed #f0f0f0;
+}
+
+.deliveries-item-status {
+    color: #a86400;
+    text-transform: capitalize;
+}
+
+.deliveries-item-status.done {
+    color: #2e7d32;
+}
+
+.deliveries-balance {
+    color: #b42318;
+}
+
+.deliveries-paid {
+    color: #2e7d32;
+}
+
+.deliveries-empty,
+.deliveries-note {
+    color: #777;
+    margin: 6px 0;
+}
+
+.deliveries-note {
+    background: #fff8e6;
+    border: 1px solid #f3dca3;
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+.deliveries-error {
+    color: #b42318;
+}
+
+.deliveries-table-wrap {
+    overflow-x: auto;
+}
+
+.deliveries-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 0.9rem;
+}
+
+.deliveries-table th,
+.deliveries-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.deliveries-table th {
+    background: #f7f7fb;
+}
+
+@media (max-width: 600px) {
+    .deliveries-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .deliveries-card-foot {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
